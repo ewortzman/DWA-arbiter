@@ -4,11 +4,11 @@ Facilitate the creationg of sports leagues, manage schedules, and allow assignin
 
 ###Essential Features:
 * AD/Coach
-  * create teams
-    * designate sport, gender (boys, girls, coed), level (fresh, JV, varsity), team name
-    * all teams are bound to a specific school
-  * set schedules
-    * must designate opponent(s) from the list of existing teams
+	* create teams
+		* designate sport, gender (boys, girls, coed), level (fresh, JV, varsity), team name
+		* all teams are bound to a specific school
+	* set schedules
+		* must designate opponent(s) from the list of existing teams
 
 * Commissioner
 	* view team schedules
