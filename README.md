@@ -33,3 +33,6 @@ Facilitate the creationg of sports leagues, manage schedules, and allow assignin
 * History
 	* allow officials to review their histories with other officials.  Allow coaches/ADs to review history against other teams
 	* view stats on previous seasons.  allow comparing previous seasons to current season
+* Better interface
+	* allow a calendar style interface for scheduling/assigning.  click-and-drag to reschedule events, etc
+	* auto-fill textbox for selecting opponents/officials/site/etc.
