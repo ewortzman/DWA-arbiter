@@ -36,3 +36,6 @@ Facilitate the creationg of sports leagues, manage schedules, and allow assignin
 * Better interface
 	* allow a calendar style interface for scheduling/assigning.  click-and-drag to reschedule events, etc
 	* auto-fill textbox for selecting opponents/officials/site/etc.
+* Evaluations
+	* allow coaches and officials to evaluate officials
+	* prehaps allow spectators to evaluate officials as well
