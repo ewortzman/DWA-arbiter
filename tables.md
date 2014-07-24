@@ -72,6 +72,14 @@
 
 **Note** this allows multi-team events, such as tournaments
 
+##EventNote:
+
+| Column name | Type | Notes |
+| ----------- | ---- | ----- |
+| event_id | int | fk->Event.id |
+| user_id | int | fk->User.id |
+| note | text |  |
+
 ##Block:
 
 | Column name | Type | Notes |
