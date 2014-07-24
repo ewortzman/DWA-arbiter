@@ -6,7 +6,7 @@
 | name | varchar |  |
 | address | varchar |  |
 | email | varchar |  |
-| phone | varchar |  |
+| phone | varchar | nullable |
 
 ##Association:
 
@@ -22,7 +22,7 @@
 | ----------- | ---- | ----- |
 | user_id | int | fk->User.id |
 | assoc_id | int | fk->Association.id |
-| role | enum | perhaps make a table for roles |
+| role | enum | nullable, perhaps make a table for roles |
 
 **Note** coaches likely have a null assoc_id
 
@@ -50,7 +50,7 @@
 | sport | int | fk->Sport.id |
 | school | int | fk->School.id |
 | name | varchar |  |
-| level | varchar |  |
+| level | varchar | perhaps enum? |
 
 ##Event:
 
@@ -60,6 +60,7 @@
 | sport | int | fk->Sport.id |
 | location | varchar |  |
 | type | varchar or enum |  |
+| fee | float | initialized to 0 upon creation by AD, set later by Commish |
 
 ##EventTeam:
 
@@ -78,4 +79,4 @@
 | user_id | int | fk->User.id |
 | start | datetime |  |
 | end | datetime |  |
-| note | varchar |  |
+| note | varchar | nullable |
