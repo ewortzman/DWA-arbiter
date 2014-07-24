@@ -2,19 +2,17 @@
 
 Facilitate the creationg of sports leagues, manage schedules, and allow assigning of officials.  system should allow athletic directors to set their schedules, commissioners to assign officials, and officials to accept/reject the assignments
 
-###Essential Features:
+###Essential Features
 * AD/Coach
 	* create teams
 		* designate sport, gender (boys, girls, coed), level (fresh, JV, varsity), team name
 		* all teams are bound to a specific school
 	* set schedules
 		* must designate opponent(s) from the list of existing teams
-
 * Commissioner
 	* view team schedules
 	* assign officials to events
 	* designate fees for events
-
 * Official
 	* view current assignments
 	* accept/decline assignments
@@ -39,3 +37,6 @@ Facilitate the creationg of sports leagues, manage schedules, and allow assignin
 * Evaluations
 	* allow coaches and officials to evaluate officials
 	* prehaps allow spectators to evaluate officials as well
+* Event Reports
+	* officials and coaches can create event reports following every event
+	* may be a black text field or a form of some kind
