@@ -26,56 +26,56 @@
 
 **Note** coaches likely have a null assoc_id
 
-Sport:
+##Sport:
 
 | Column name | Type | Notes |
 | ----------- | ---- | ----- |
-	id (pk)			#int
-	name				#varchar
+| id | int | pk |
+| name | varchar |  |
 
-School:
-
-| Column name | Type | Notes |
-| ----------- | ---- | ----- |
-	id (pk)			#int
-	name				#varchar
-	address			#varchar
-	AD (fk to User.id)	#int
-
-Team:
+##School:
 
 | Column name | Type | Notes |
 | ----------- | ---- | ----- |
-	id (pk)			#int
-	sport (fk)	#int
-	school (fk)	#int
-	name				#varchar
-	level				#varchar
+| id | int | pk |
+| name | varchar |  |
+| address | varchar |  |
+| AD | int | fk->User.id |
 
-Event:
-
-| Column name | Type | Notes |
-| ----------- | ---- | ----- |
-	id (pk)			#int
-	sport (fk)	#int
-	location		#varchar
-	type				#varchar (maybe enum)
-
-EventTeam:
+##Team:
 
 | Column name | Type | Notes |
 | ----------- | ---- | ----- |
-	event_id (fk)	#int
-	team_id (fk)	#int
-	home/away 		#boolean
+| id | int | pk |
+| sport | int | fk->Sport.id |
+| school | int | fk->School.id |
+| name | varchar |  |
+| level | varchar |  |
 
-	# note: this allows multi-team events, such as tournaments
-
-Block
+##Event:
 
 | Column name | Type | Notes |
 | ----------- | ---- | ----- |
-	user_id (fk)	#int
-	start					#datetime
-	end						#datetime
-	note					#varchar
+| id | int | pk |
+| sport | int | fk->Sport.id |
+| location | varchar |  |
+| type | varchar or enum |  |
+
+##EventTeam:
+
+| Column name | Type | Notes |
+| ----------- | ---- | ----- |
+| event_id | int | fk->Event.id |
+| team_id | int | fk->Team.id |
+| home/away | boolean |  |
+
+	**Note:** this allows multi-team events, such as tournaments
+
+##Block:
+
+| Column name | Type | Notes |
+| ----------- | ---- | ----- |
+| user_id | int | fk->User.id |
+| start | datetime |  |
+| end | datetime |  |
+| note | varchar |  |
