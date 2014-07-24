@@ -69,7 +69,7 @@
 | team_id | int | fk->Team.id |
 | home/away | boolean |  |
 
-	**Note:** this allows multi-team events, such as tournaments
+**Note** this allows multi-team events, such as tournaments
 
 ##Block:
 
