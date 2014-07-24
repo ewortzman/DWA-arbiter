@@ -1,9 +1,9 @@
 User:
 
-| column name | type | notes |
-| --------- | -- | --- |
-| id | int | pk |
-| name | varchar |  |
+| Column name | Type | Notes |
+| ----------- | ---- | ----- |
+| id          | int  | pk    |
+| name        | varchar |  |
 | address | varchar |  |
 | email | varchar |  |
 | phone | varchar |  |
