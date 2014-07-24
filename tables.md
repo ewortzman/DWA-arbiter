@@ -1,4 +1,5 @@
 User:
+
 	|column name|type|notes|
 	| --------- | -- | --- |
 	|id|int|pk|
