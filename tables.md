@@ -1,11 +1,11 @@
 User:
 	|column name|type|notes|
-	|-----------|----|-----|
-	|id|int|pk
-	|name|varchar|
-	|address|varchar|
-	|email|varchar|
-	|phone|varchar|
+	| --------- | -- | --- |
+	|id|int|pk|
+	|name|varchar||
+	|address|varchar||
+	|email|varchar||
+	|phone|varchar||
 
 Association:
 	id (pk)			#int
