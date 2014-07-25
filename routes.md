@@ -1,4 +1,4 @@
-#| Route | Method | Intention | Note |
+\#| Route | Method | Intention | Note |
 | ----- | ------ | --------- | ---- |
 | **Generic**
 1. | / | get | homepage | only shown if not logged in |
