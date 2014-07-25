@@ -1,6 +1,7 @@
 <?php
 
 return array(
+	'default' => 'sqlite',
 
 	/*
 	|--------------------------------------------------------------------------
@@ -19,6 +20,11 @@ return array(
 	*/
 
 	'connections' => array(
+		'sqlite' => array(
+			'driver'   => 'sqlite',
+			'database' => __DIR__.'/../../database/local.db',
+			'prefix'   => '',
+		),
 
 		'mysql' => array(
 			'driver'    => 'mysql',
