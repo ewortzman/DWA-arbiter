@@ -21,7 +21,7 @@
 | /blocks | post | sends new block to database | ajax call. no redirect |
 | **Commissioner pages**
 | /association/{id}/members | get | shows directory listing for association members | available only to association memebers |
-| /association/{id}/schedule | shows all events for an association | available only to commissioner |
+| /association/{id}/schedule | get | shows all events for an association | available only to commissioner |
 | /association/{id} | post | updates association data |  |
 | /event/{id} | post | modifies event. used for making assignments |
 | /event/add | get | shows form for new event | available only to AD and commissioner |
