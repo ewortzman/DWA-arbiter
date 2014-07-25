@@ -1,3 +1,3 @@
-|route|method|intention|note
-|-|-|-|-|
-|/|get|homepage||
+| route | method | intention | note |
+| - | - | - | - |
+| / | get | homepage |  |
