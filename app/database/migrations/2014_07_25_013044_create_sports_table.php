@@ -20,8 +20,6 @@ class CreateSportsTable extends Migration {
 
 			#Mandatory fields
 			$table->string('name');
-
-			#Optional fields
 		});
 		//
 	}

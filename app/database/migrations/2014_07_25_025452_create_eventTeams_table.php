@@ -18,6 +18,9 @@ class CreateEventTeamsTable extends Migration {
 			$table->integer('team_id')->unsigned();
 			$table->boolean('home');
 
+			#Set primary key
+			$table->primary(array('event_id', 'team_id'));
+
 			#Set foreign keys
 			$table->foreign('event_id')->references('id')->on('events');
 			$table->foreign('team_id')->references('id')->on('teams');

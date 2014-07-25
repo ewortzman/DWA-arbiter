@@ -21,6 +21,9 @@ class CreateUserRolesTable extends Migration {
 			#Set foreign keys
 			$table->foreign('user_id')->references('id')->on('users');
 			$table->foreign('association_id')->references('id')->on('associations');
+			
+			#Set unique index
+			$table->unique(array('user_id','association_id', 'role'));
 		});
 		//
 	}

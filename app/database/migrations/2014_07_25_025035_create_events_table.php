@@ -22,6 +22,8 @@ class CreateEventsTable extends Migration {
 			$table->integer('sport_id')->unsigned();
 			$table->string('location');
 			$table->string('type');
+			$table->dateTime('start');
+			$table->dateTime('end');
 			$table->float('fee');
 
 			#Set foreign keys

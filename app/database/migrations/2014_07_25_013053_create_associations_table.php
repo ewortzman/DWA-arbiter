@@ -22,8 +22,6 @@ class CreateAssociationsTable extends Migration {
 			$table->string('name');
 			$table->integer('sport_id')->unsigned();
 
-			#Optional Fields
-
 			#Set foreign keys
 			$table->foreign('sport_id')->references('id')->on('sports');
 		});
