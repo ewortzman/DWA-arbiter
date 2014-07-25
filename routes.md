@@ -15,11 +15,11 @@
 | /event/{id} | get | shows data for particular event |  |
 | /school/{id} | get | shows data about school | list of teams available |
 | /team/{id} | get | shows data about team | team schedule available |
-| **Official's Pages
+| **Official's Pages**
 | /association/{id}/members | get | shows directory listing for association members | available only to association memebers |
 | /blocks | get | shows calendar with blocks |  |
 | /blocks | post | sends new block to database | ajax call. no redirect |
-| **Commissioner pages
+| **Commissioner pages**
 | /association/{id}/members | get | shows directory listing for association members | available only to association memebers |
 | /association/{id}/schedule | shows all events for an association | available only to commissioner |
 | /association/{id} | post | updates association data |  |
