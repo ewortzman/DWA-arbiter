@@ -1,5 +1,5 @@
-| \# | Route | Method | Intention | Note |
-| -- | ----- | ------ | --------- | ---- |
+| Route | Method | Intention | Note |
+| ----- | ------ | --------- | ---- |
 | **Generic**
 | / | get | homepage | only shown if not logged in |
 | **Login**
