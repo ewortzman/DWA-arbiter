@@ -21,6 +21,7 @@ class CreateTeamsTable extends Migration {
 			#Mandatory fields
 			$table->integer('sport_id')->unsigned();
 			$table->integer('school_id')->unsigned();
+			$table->integer('coach')->unsigned();
 			$table->string('name');
 			$table->string('level');
 			$table->enum('gender', array('boys', 'girls', 'coed'));
@@ -28,6 +29,7 @@ class CreateTeamsTable extends Migration {
 			#Set foreign keys
 			$table->foreign('sport_id')->references('id')->on('sports');
 			$table->foreign('school_id')->references('id')->on('schools');
+			$table->foreign('coach')->references('id')->on('users');
 		});
 		//
 	}

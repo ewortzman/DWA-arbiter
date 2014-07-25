@@ -10,6 +10,6 @@ class Association extends \Eloquent {
 	}
 
 	public function members(){ ## Pivot table: user_roles.association_id
-		return this->belongsToMany('User', 'user_roles')->withPivot('role');
+		return this->belongsToMany('User', 'user_roles')->withPivot('role'); ## role = enum('AD', 'coach', 'official', 'commissioner')
 	}
 }

@@ -7,6 +7,10 @@ class Team extends \Eloquent {
 	public $level; ## string
 	public $gender; ## enum('boys', 'girls', 'coed')
 
+	public function coach(){ ## fk(User.id)
+		return this->hasOne('User', 'coach');
+	}
+
 	public function sport(){ ## fk(sports.id)
 		return this->belongsTo('Sport');
 	}
