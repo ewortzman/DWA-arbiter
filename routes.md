@@ -32,3 +32,5 @@
 | /event/add | post | sends new event to database | redirects to /event/{id} |
 | /event/{id} | post | updates event information |  |
 | /team/{id} | post | updates team information |  |
+| **Coach pages**
+| /team/{id} | post | updates team information |  |
