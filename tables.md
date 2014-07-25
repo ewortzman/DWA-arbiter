@@ -1,90 +1,95 @@
-##User:
+##users:
 
 | Column name | Type | Notes |
 | ----------- | ---- | ----- |
 | id | int | pk |
+| email | varchar |  |
 | name | varchar |  |
 | address | varchar |  |
-| email | varchar |  |
+| password | varchar | encrypted |
 | phone | varchar | nullable |
+| experience | int | nullable |
 
-##Association:
+##associations:
 
 | Column name | Type | Notes |
 | ----------- | ---- | ----- |
 | id | int | pk |
 | name | varchar |  |
-| sport | int | fk->Sport.id |
+| sport | int | fk->sports.id |
 
-##UserRole:
+##user_roles:
 
 | Column name | Type | Notes |
 | ----------- | ---- | ----- |
-| user_id | int | fk->User.id |
-| assoc_id | int | fk->Association.id |
-| role | enum | nullable, perhaps make a table for roles |
+| user_id | int | fk->users.id |
+| assoc_id | int | nullable, fk->associations.id |
+| role | enum |  |
 
 **Note** coaches likely have a null assoc_id
 
-##Sport:
+##sports:
 
 | Column name | Type | Notes |
 | ----------- | ---- | ----- |
 | id | int | pk |
 | name | varchar |  |
 
-##School:
+##schools:
 
 | Column name | Type | Notes |
 | ----------- | ---- | ----- |
 | id | int | pk |
 | name | varchar |  |
 | address | varchar |  |
-| AD | int | fk->User.id |
+| AD | int | fk->users.id |
 
-##Team:
+##teams:
 
 | Column name | Type | Notes |
 | ----------- | ---- | ----- |
 | id | int | pk |
-| sport | int | fk->Sport.id |
-| school | int | fk->School.id |
+| sport_id | int | fk->sports.id |
+| school_id | int | fk->schools.id |
 | name | varchar |  |
-| level | varchar | perhaps enum? |
+| level | varchar |  |
+| coach | int | fk->users.id |
 
-##Event:
+##events:
 
 | Column name | Type | Notes |
 | ----------- | ---- | ----- |
 | id | int | pk |
-| sport | int | fk->Sport.id |
+| sport_id | int | fk->sports.id |
 | location | varchar |  |
-| type | varchar or enum |  |
+| type | varchar |  |
+| start | datetime |  |
+| end | datetime |  |
 | fee | float | initialized to 0 upon creation by AD, set later by Commish |
 
-##EventTeam:
+##event_teams:
 
 | Column name | Type | Notes |
 | ----------- | ---- | ----- |
-| event_id | int | fk->Event.id |
-| team_id | int | fk->Team.id |
-| home/away | boolean |  |
+| event_id | int | fk->events.id |
+| team_id | int | fk->teams.id |
+| home | boolean |  |
 
 **Note** this allows multi-team events, such as tournaments
 
-##EventNote:
+##event_notes:
 
 | Column name | Type | Notes |
 | ----------- | ---- | ----- |
-| event_id | int | fk->Event.id |
-| user_id | int | fk->User.id |
+| event_id | int | fk->events.id |
+| user_id | int | fk->users.id |
 | note | text |  |
 
-##Block:
+##block:
 
 | Column name | Type | Notes |
 | ----------- | ---- | ----- |
-| user_id | int | fk->User.id |
+| user_id | int | fk->users.id |
 | start | datetime |  |
 | end | datetime |  |
 | note | varchar | nullable |
