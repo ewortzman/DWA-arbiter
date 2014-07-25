@@ -1,7 +1,7 @@
-|   | Route | Method | Intention | Note |
-| - | ----- | ------ | --------- | ---- |
+| Route | Method | Intention | Note |
+| ----- | ------ | --------- | ---- |
 | **Generic**
-1. | / | get | homepage | only shown if not logged in |
+| / | get | homepage | only shown if not logged in |
 | **Login**
 | /login | get | login page |  |
 | /login | post | login attempt | redirects to /dashboard on success, /login on failure |
