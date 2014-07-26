@@ -29,19 +29,19 @@ Route::get('/dashboard', function(){
 });
 
 Route::get('/association/{id}', function($id){
-	return "association placeholder";
+	return "association $id placeholder";
 });
 
 Route::post('/association/{id}', function($id){
-	return "association POST placeholder";
+	return "association $id POST placeholder";
 });
 
 Route::get('/association/{id}/members', function($id){
-	return "association member list placeholder";
+	return "association $id member list placeholder";
 });
 
 Route::get('/association/{id}/schedule', function($id){
-	return "association master schedule placeholder";
+	return "association $id master schedule placeholder";
 });
 
 Route::get('/schedule', function(){
@@ -57,39 +57,39 @@ Route::post('/profile', function(){
 });
 
 Route::get('/user/{id}', function($id){
-	return "user page placeholder";
+	return "user $id placeholder";
 });
 
 Route::get('/event/{id}', function($id){
-	return "event page placeholder";
+	return "event $id placeholder";
 });
 
 Route::post('/event/{id}', function($id){
-	return "event page POST placeholder";
+	return "event $id POST placeholder";
 });
 
 Route::get('/event/add', function(){
 	return "add event placeholder";
-})
+});
 
 Route::post('/event/add', function(){
 	return "add event POST placeholder";
-})
+});
 
 Route::get('/school/{id}', function($id){
-	return "school page placeholder";
+	return "school $id placeholder";
 });
 
 Route::post('/school/{id}', function($id){
-	return "school page POST placeholder";
+	return "school $id POST placeholder";
 });
 
 Route::get('/team/{id}', function($id){
-	return "team page placeholder";
+	return "team $id placeholder";
 });
 
 Route::post('/team/{id}', function($id){
-	return "team page POST placeholder";
+	return "team $id POST placeholder";
 });
 
 Route::get('/blocks', function(){
