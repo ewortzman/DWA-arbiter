@@ -13,7 +13,8 @@
 
 Route::get('/', function()
 {
-	return "homepage placeholder";
+	return View::make('templates.master');
+	// return "homepage placeholder";
 });
 
 Route::get('/login', function(){
@@ -22,6 +23,10 @@ Route::get('/login', function(){
 
 Route::post('/login', function(){
 	return "login POST placeholder";
+});
+
+Route::post('/logout', function(){
+	return "logout placeholder";
 });
 
 Route::get('/dashboard', function(){
