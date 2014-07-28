@@ -3,12 +3,6 @@
 class Event extends \Eloquent {
 	protected $table = "events";
 
-	public $location; ## string
-	public $type; ## string
-	public $start; ## datetime
-	public $end; ## datetime
-	public $fee; ## float
-
 	public function sport(){ ## fk(sports.id)
 		return this->belongsTo('Sport');
 	}

@@ -8,8 +8,10 @@
 	@show
 	</title>
 
-	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
-	<link rel="stylesheet" type="text/css" href="../css/bootstrap-theme.min.css">
+	
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+	<link rel="stylesheet" type="text/css" href="css/lavish-bootstrap.css">
+	<link rel="stylesheet" type="text/css" href="css/master.css">
 
 	@yield('styles')
 
@@ -28,33 +30,39 @@
 		</div>
 		<div class="collapse navbar-collapse" id="navbar-collapse">
 			<ul class="nav navbar-nav navbar-right">
-				@if(Auth::check())
-				<li>Welcome!</li>
-				<li>
-					<a href="/profile">Profile</a>
-				</li>
-				<li>
-					<a href="/logout">Logout</a>
-				</li>
-				@else
-				<li>
-					<a href="/login">Login</a>
-				</li>
+				@if(!preg_match("/^(login|register)/", Route::current()->getUri()))
+					@if(Auth::check())
+					<li>
+						<label class="control-label">Welcome {{ ucwords(Auth::user()->first) }}!</label>
+					</li>
+					<li>
+						<a href="/profile">Profile</a>
+					</li>
+					<li>
+						<a href="/logout">Logout</a>
+					</li>
+					@else
+					<li>
+						<a href="/login">Login</a>
+					</li>
+					<li>
+						<a href="/register">Register</a>
+					</li>
+					@endif
 				@endif
 			</ul>
 		</div>
 	</div>			
 </nav>
 
-<div class="jumbotron">
-	<div class="container">
-	@yield('jumbotron')
-	</div>
+<div class="container" style="padding-top:70px;">
+@yield('content')
 </div>
 
+
 <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
-<script src="../js/bootstrap.js"></script>
-<script src="../js/typeahead.bundle.js"></script>
+<script src="js/bootstrap.js"></script>
+<script src="js/typeahead.bundle.js"></script>
 
 @yield('script')
 </body>

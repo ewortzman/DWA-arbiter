@@ -11,27 +11,60 @@
 |
 */
 
-Route::get('/', function()
+Route::get('/', array('before'=>'reverse-auth', function()
 {
-	return View::make('templates.master');
-	// return "homepage placeholder";
+	return View::make('index');
+}));
+
+Route::get('/login', array('before'=>'reverse-auth', function(){
+	return View::make('login');
+}));
+
+Route::post('/login', array('before'=>'reverse-auth', function(){
+	$data = Input::all();
+
+	if(Auth::attempt(array('email'=>$data['email'], 'password'=>$data['password']), isset($data['remember']))){
+		return Redirect::intended('/dashboard');
+	}
+	return Redirect::to('/login');
+}));
+
+Route::get('/register', array('before'=>'reverse-auth', function(){
+	return View::make('register');
+}));
+
+Route::post('/register', array('before'=>'reverse-auth', function(){
+	$data=Input::all();
+
+	if ($data['password'] != $data['confirm-password']){
+		return Redirect::to('/register');
+	}
+
+	$user = new User;
+
+	$user->email=$data['email'];
+	$user->password=Hash::make($data['password']);
+	$user->first=$data['first'];
+	$user->last=$data['last'];
+	$user->address=$data['street'].", ".$data['city'].", ".$data['state']." ".$data['zip'];
+	$user->phone=$data['phone'];
+
+	$user->save();
+
+	Auth::login($user);
+
+	return Redirect::intended('/dashboard');
+}));
+
+Route::get('/logout', function(){
+	Auth::logout();
+
+	return Redirect::to('/');
 });
 
-Route::get('/login', function(){
-	return "login placeholder";
-});
-
-Route::post('/login', function(){
-	return "login POST placeholder";
-});
-
-Route::post('/logout', function(){
-	return "logout placeholder";
-});
-
-Route::get('/dashboard', function(){
-	return "dashboard placeholder";
-});
+Route::get('/dashboard', array('before'=>'auth', function(){
+	return View::make('dashboard');
+}));
 
 Route::get('/association/{id}', function($id){
 	return "association $id placeholder";

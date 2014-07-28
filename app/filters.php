@@ -48,6 +48,21 @@ Route::filter('auth', function()
 	}
 });
 
+Route::filter('reverse-auth', function()
+{
+	if (Auth::check())
+	{
+		if (Request::ajax())
+		{
+			return Response::make('Unauthorized', 401);
+		}
+		else
+		{
+			return Redirect::guest('dashboard');
+		}
+	}
+});
+
 
 Route::filter('auth.basic', function()
 {

@@ -3,8 +3,6 @@
 class Association extends \Eloquent {
 	protected $table = "associations";
 
-	public $name; ## string
-
 	public function sport(){ ## fk(sports.id)
 		return this->belongsTo('Sport');
 	}

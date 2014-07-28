@@ -20,9 +20,11 @@ class CreateUsersTable extends Migration {
 
 			#Mandatory fields
 			$table->string('email'); #used as username
-			$table->string('name');
+			$table->string('first');
+			$table->string('last');
 			$table->string('address');
 			$table->string('password');
+			$table->rememberToken();
 
 			#Optional fields
 			$table->string('phone')->nullable();

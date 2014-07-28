@@ -3,9 +3,6 @@
 class Team extends \Eloquent {
 	protected $table = "teams";
 
-	public $name; ## string
-	public $level; ## string
-	public $gender; ## enum('boys', 'girls', 'coed')
 
 	public function coach(){ ## fk(User.id)
 		return this->hasOne('User', 'coach');
