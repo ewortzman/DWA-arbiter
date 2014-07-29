@@ -93,8 +93,12 @@ Route::get('/dashboard', array('before'=>'auth', function(){
 	$user = Auth::user();
 	$roles = $user->roles;
 
+	foreach ($roles as $role){
+		$associations[Association::find($role->pivot->association_id)->name][] = $role->pivot->role;
+	}
+
 	return View::make('dashboard')
-		->with('roles', $roles);
+		->with('roles', $associations);
 }));
 
 Route::get('/association/{id}', function($id){

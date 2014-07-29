@@ -4,7 +4,7 @@
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "882a79ac1bdebef52b62898caaa00d4a",
+    "hash": "2f07d503b71dc1f605b1b523ecfef7d4",
     "packages": [
         {
             "name": "classpreloader/classpreloader",
@@ -1951,6 +1951,54 @@
             "time": "2014-07-17 07:25:43"
         },
         {
+            "name": "paste/pre",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/paste/Pre.php.git",
+                "reference": "bf47c87c8fd8f1f75d6b2a3235ee072bb45a5842"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/paste/Pre.php/zipball/bf47c87c8fd8f1f75d6b2a3235ee072bb45a5842",
+                "reference": "bf47c87c8fd8f1f75d6b2a3235ee072bb45a5842",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "Paste": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Aaron Oxborrow",
+                    "email": "aaron@pastelabs.com",
+                    "homepage": "http://pastelabs.com/",
+                    "role": "Developer"
+                }
+            ],
+            "description": "A handsome replacement for print_r & var_dump. Debugging output with understated style.",
+            "homepage": "https://github.com/paste/Pre.php",
+            "keywords": [
+                "debug",
+                "dump",
+                "pre",
+                "pretty",
+                "print",
+                "print_r",
+                "var_dump"
+            ],
+            "time": "2013-06-12 03:56:57"
+        },
+        {
             "name": "way/generators",
             "version": "dev-master",
             "source": {
@@ -2007,7 +2055,8 @@
         "guzzlehttp/guzzle": 20,
         "mailgun/mailgun-php": 20,
         "fzaninotto/faker": 20,
-        "way/generators": 20
+        "way/generators": 20,
+        "paste/pre": 20
     },
     "platform": [
 
