@@ -21,5 +21,7 @@ Dashboard
 @stop
 
 @section('jumbotron')
-Dashboard Placeholder
+@foreach($roles as $role)
+{{$role->pivot->role}}
+@endforeach
 @stop

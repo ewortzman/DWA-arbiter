@@ -69,7 +69,7 @@ Route::post('/register', array('before'=>'reverse-auth', function(){
 }));
 
 Route::get('/verify/{code}', function($code){
-	$user = User::where('confirmation', '=', $code)->get();
+	$user = User::where('confirmation', '=', $code)->first();
 
 	if ($user){
 		$user->confirmed=1;
@@ -78,7 +78,7 @@ Route::get('/verify/{code}', function($code){
 		return Redirect::to('/')->with('flash-message', 'No matching user was found');
 	}
 
-	Auth::attempt($user);
+	Auth::login($user);
 
 	return Redirect::to('/dashboard');
 });
@@ -90,7 +90,11 @@ Route::get('/logout', function(){
 });
 
 Route::get('/dashboard', array('before'=>'auth', function(){
-	return View::make('dashboard');
+	$user = Auth::user();
+	$roles = $user->roles;
+
+	return View::make('dashboard')
+		->with('roles', $roles);
 }));
 
 Route::get('/association/{id}', function($id){

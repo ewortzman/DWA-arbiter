@@ -19,7 +19,7 @@ class CreateUsersTable extends Migration {
 			$table->timestamps();
 
 			#Mandatory fields
-			$table->string('email'); #used as username
+			$table->string('email')->unique(); #used as username
 			$table->string('first');
 			$table->string('last');
 			$table->string('address');
