@@ -22,6 +22,6 @@ Dashboard
 
 @section('jumbotron')
 @foreach($roles as $role)
-{{$role->pivot->role}}
+{{ Association::find($role->pivot->association_id)->name }}: {{ $role->pivot->role }}<br>
 @endforeach
 @stop
