@@ -9,15 +9,16 @@ Dashboard
 @section('sidebar')
 <ul class="nav list-unstyled">
 
-@foreach($roles as $assoc=>$role)
+@foreach($roles as $role=>$assocs)
 	<li class="nav-header">
-		<a href="#" data-toggle="collapse" data-target="#{{$assoc}}menu">
-			<h5>{{ $assoc }} <i class="glyphicon glyphicon-chevron-right"></i></h5>
+		<a href="#" data-toggle="collapse" data-target="#{{$role}}menu">
+			<h5>{{$role}}<i class="glyphicon glyphicon-chevron-right"></i></h5>
 		</a>
-		<ul class="list-unstyled collapse" id="{{$assoc}}menu">
-			@foreach($role as $title)
-			<li class="active"> <a href="#">{{$title}}</a></li>
+		<ul class="list-unstyled collapse" id="{{$role}}menu">
+			@foreach($assocs as $assoc)
+			<li><a href="">{{$assoc_lookup[$assoc]}}</a></li>
 			@endforeach
+			<li><a href="#"></a></li>
 		</ul>
 	</li>
 @endforeach
@@ -69,13 +70,7 @@ Dashboard
 @stop
 
 @section('jumbotron')
-@foreach($roles as $assoc=>$role)
-{{$assoc}}:
-@foreach($role as $title)
-{{$title}}
-@endforeach
-<br>
-@endforeach
+Placeholder
 @stop
 
 @section('script')
