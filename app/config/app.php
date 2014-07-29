@@ -190,6 +190,7 @@ return array(
 		'View'            => 'Illuminate\Support\Facades\View',
 		'Mailgun'         => 'Mailgun\Mailgun',
 		'Faker'           => 'Faker\Factory',
+		'Pre'             => 'Paste\Pre'
 	),
 
 );
