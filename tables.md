@@ -4,11 +4,14 @@
 | ----------- | ---- | ----- |
 | id | int | pk |
 | email | varchar |  |
-| name | varchar |  |
+| first | varchar |  |
+| last | varchar |  |
 | address | varchar |  |
 | password | varchar | encrypted |
 | phone | varchar | nullable |
 | experience | int | nullable |
+| confirmation | varchar |  |
+| confirmed | tinyint |  |
 
 ##associations:
 
@@ -16,14 +19,14 @@
 | ----------- | ---- | ----- |
 | id | int | pk |
 | name | varchar |  |
-| sport | int | fk->sports.id |
+| sport_id | int | fk->sports.id |
 
 ##user_roles:
 
 | Column name | Type | Notes |
 | ----------- | ---- | ----- |
 | user_id | int | fk->users.id |
-| assoc_id | int | nullable, fk->associations.id |
+| association_id | int | nullable, fk->associations.id |
 | role | enum |  |
 
 **Note** coaches likely have a null assoc_id
