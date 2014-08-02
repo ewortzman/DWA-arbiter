@@ -4599,7 +4599,7 @@ a.list-group-item:focus {
 }
 .panel {
   margin-bottom: 20px;
-  background-color: #ffffff;
+  background-color: #C7C5B1;
   border: 1px solid transparent;
   border-radius: 4px;
   -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
@@ -4699,9 +4699,10 @@ a.list-group-item:focus {
   border-color: #dddddd;
 }
 .panel-default > .panel-heading {
-  color: #4f5b6b;
-  background-color: #f5f5f5;
+  color: #C7C5B1;
+  background-color: #0D1C31;
   border-color: #dddddd;
+  font-weight: bold;
 }
 .panel-default > .panel-heading + .panel-collapse .panel-body {
   border-top-color: #dddddd;

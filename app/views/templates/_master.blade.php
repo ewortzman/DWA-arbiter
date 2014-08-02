@@ -14,7 +14,6 @@
 	<link rel="stylesheet" type="text/css" href="css/master.css">
 
 	@yield('styles')
-
 </head>
 <body>
 <nav id="navbar" class="navbar navbar-default navbar-inverse navbar-fixed-top" role="navigation">
@@ -60,7 +59,7 @@
 </div>
 
 
-<script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 <script src="js/bootstrap.js"></script>
 <script src="js/typeahead.bundle.js"></script>
 

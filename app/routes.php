@@ -11,15 +11,30 @@
 |
 */
 
+/**
+ **********************************
+ * ROUTE: index
+ **********************************
+ */
 Route::get('/', array('before'=>'reverse-auth', function()
 {
 	return View::make('index');
 }));
 
+/**
+ **********************************
+ * ROUTE: login
+ **********************************
+ */
 Route::get('/login', array('before'=>'reverse-auth', function(){
 	return View::make('login');
 }));
 
+/**
+ **********************************
+ * ROUTE: login POST
+ **********************************
+ */
 Route::post('/login', array('before'=>'reverse-auth', function(){
 	$data = Input::all();
 
@@ -35,10 +50,20 @@ Route::post('/login', array('before'=>'reverse-auth', function(){
 	return Redirect::to('/login');
 }));
 
+/**
+ **********************************
+ * ROUTE: register
+ **********************************
+ */
 Route::get('/register', array('before'=>'reverse-auth', function(){
 	return View::make('register');
 }));
 
+/**
+ **********************************
+ * ROUTE: register POST
+ **********************************
+ */
 Route::post('/register', array('before'=>'reverse-auth', function(){
 	$data=Input::all();
 
@@ -68,6 +93,11 @@ Route::post('/register', array('before'=>'reverse-auth', function(){
 	return View::make('post-reg')->with('user', $user);
 }));
 
+/**
+ **********************************
+ * ROUTE: verify
+ **********************************
+ */
 Route::get('/verify/{code}', function($code){
 	$user = User::where('confirmation', '=', $code)->first();
 
@@ -83,12 +113,22 @@ Route::get('/verify/{code}', function($code){
 	return Redirect::to('/dashboard');
 });
 
+/**
+ **********************************
+ * ROUTE: logout
+ **********************************
+ */
 Route::get('/logout', function(){
 	Auth::logout();
 
 	return Redirect::to('/');
 });
 
+/**
+ **********************************
+ * ROUTE: dashboard
+ **********************************
+ */
 Route::get('/dashboard', array('before'=>'auth', function(){
 	$user = Auth::user();
 	$user_roles = $user->roles;
@@ -102,6 +142,33 @@ Route::get('/dashboard', array('before'=>'auth', function(){
 		->with('roles', $roles)
 		->with('assoc_lookup', $assoc_lookup);
 }));
+
+/**
+ **********************************
+ * ROUTE: commissioner
+ **********************************
+ */
+Route::get('/commissioner', function(){
+	return 'Commissioner';
+});
+
+/**
+ **********************************
+ * ROUTE: official
+ **********************************
+ */
+Route::get('/official', function(){
+	return View::make("official");
+});
+
+/**
+ **********************************
+ * ROUTE: AD
+ **********************************
+ */
+Route::get('/athletic_director', function(){
+	return 'Athletic Director';
+});
 
 Route::get('/association/{id}', function($id){
 	return "association $id placeholder";
@@ -120,7 +187,10 @@ Route::get('/association/{id}/schedule', function($id){
 });
 
 Route::get('/schedule', function(){
-	return "schedule placeholder";
+	$events = Auth::user()->events();
+
+	return View::make("schedule")
+		->with("events", $events);
 });
 
 Route::get('/profile', function(){
