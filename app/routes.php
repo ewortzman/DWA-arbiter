@@ -187,9 +187,10 @@ Route::get('/association/{id}/schedule', function($id){
 });
 
 Route::get('/schedule', function(){
-	$events = Auth::user()->events();
+	$events = Auth::user()->events;
 
 	return View::make("schedule")
+		->with("user", Auth::user())
 		->with("events", $events);
 });
 

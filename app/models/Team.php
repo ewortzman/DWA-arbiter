@@ -17,6 +17,6 @@ class Team extends \Eloquent {
 	}
 
 	public function events(){ ## Pivot table: event_teams.team_id
-		return $this->belongsToMany('Event', 'event_teams')->withPivot('home');
+		return $this->belongsToMany('Models\\Event', 'event_teams')->withPivot('home');
 	}
 }

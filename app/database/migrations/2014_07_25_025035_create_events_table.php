@@ -19,7 +19,7 @@ class CreateEventsTable extends Migration {
 			$table->timestamps();
 
 			#Mandatory fields
-			$table->integer('sport_id')->unsigned();
+			$table->integer('association_id')->unsigned();
 			$table->string('location');
 			$table->string('type');
 			$table->dateTime('start');
@@ -27,7 +27,7 @@ class CreateEventsTable extends Migration {
 			$table->float('fee');
 
 			#Set foreign keys
-			$table->foreign('sport_id')->references('id')->on('sports');
+			$table->foreign('association_id')->references('id')->on('associations');
 		});
 		//
 	}

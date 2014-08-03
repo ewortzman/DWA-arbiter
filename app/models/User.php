@@ -30,4 +30,8 @@ class User extends Eloquent implements UserInterface, RemindableInterface {
 	public function roles(){ ## Pivot table: user_roles.user_id
 		return $this->belongsToMany('Association', 'user_roles')->withPivot('role');
 	}
+
+	public function events(){
+		return $this->belongsToMany('Models\\Event', 'user_events');
+	}
 }

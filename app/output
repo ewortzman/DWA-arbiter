@@ -1,0 +1,24 @@
+database/seeds/DatabaseSeeder.php:24:    $this->call('EventTableSeeder');
+database/seeds/DatabaseSeeder.php:25:    $this->call('EventTeamTableSeeder');
+database/seeds/DatabaseSeeder.php:26:    $this->call('UserEventTableSeeder');
+database/seeds/DatabaseSeeder.php:228:class EventTableSeeder extends Seeder{
+database/seeds/DatabaseSeeder.php:233:      Event::create([
+database/seeds/DatabaseSeeder.php:244:class EventTeamTableSeeder extends Seeder{
+database/seeds/DatabaseSeeder.php:246:    foreach (Event::all() as $event){
+database/seeds/DatabaseSeeder.php:268:class UserEventTableSeeder extends Seeder{
+database/seeds/DatabaseSeeder.php:270:    foreach (Event::all() as $event) {
+database/migrations/2014_07_25_025035_create_events_table.php:6:class CreateEventsTable extends Migration {
+database/migrations/2014_07_25_025452_create_eventTeams_table.php:6:class CreateEventTeamsTable extends Migration {
+database/migrations/2014_08_02_182707_create_userEvents_table.php:6:class CreateUserEventsTable extends Migration {
+database/migrations/2014_07_25_025916_create_eventNotes_table.php:6:class CreateEventNotesTable extends Migration {
+models/EventNote.php:3:class EventNote extends \Eloquent {
+models/EventNote.php:7:		return $this->belongsTo('Event');
+models/Sport.php:11:		return $this->hasMany('Event');
+models/Team.php:20:		return $this->belongsToMany('Event', 'event_teams')->withPivot('home');
+models/User.php:27:		return $this->hasMany('EventNote');
+models/User.php:35:		return $this->belongsToMany('Events', 'user_events');
+models/Association.php:11:		return $thie->hasMany('Event');
+models/Event.php:3:class Event extends \Eloquent {
+models/Event.php:11:		return $this->hasMany('EventNote', 'event_id');
+views/schedule.blade.php:8:				<th>Event id</th>
+views/commissioner.blade.php:5:	<li class="active"><a href="#">Events</a></li>

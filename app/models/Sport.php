@@ -8,6 +8,6 @@ class Sport extends \Eloquent {
 	}
 
 	public function events(){ ## Owner: events.sport_id
-		return $this->hasMany('Event');
+		return $this->hasMany('Models\\Event');
 	}
 }
