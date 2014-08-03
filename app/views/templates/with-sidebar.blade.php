@@ -8,9 +8,7 @@
   	
     <!-- jumbotron -->
     <div class="col-xs-12 col-sm-10">
-    	<div class="panel panel-default">
-        @yield(isset($role) ? 'jumbotron-'.$role : 'jumbotron')
-      </div>
+      @yield(isset($role) ? 'jumbotron-'.$role : 'jumbotron')
     </div>
   </div>
 </div>

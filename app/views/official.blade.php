@@ -40,7 +40,7 @@ $('.parent').click(function() {
 });
 
 $(document).ready(function(){
-	$.get('/schedule', function(data){
+	$.get('/schedule', { role: "Official", association: "{{ $assoc_lookup[$assocs[0]] }}" }, function(data){
 		$("#jumbo").html(data)
 	})
 })

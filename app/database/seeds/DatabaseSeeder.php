@@ -208,7 +208,7 @@ class TeamTableSeeder extends Seeder{
         'sport_id'=>1,
         'school_id'=>$school->id,
         'coach'=>2*$school->id-1+200,
-        'name'=>'Wrestling',
+        'name'=>$school->name.' Wrestling',
         'level'=>'Varsity',
         'gender'=>'coed'
       ]);
@@ -217,7 +217,7 @@ class TeamTableSeeder extends Seeder{
         'sport_id'=>2,
         'school_id'=>$school->id,
         'coach'=>2*$school->id+200,
-        'name'=>'Football',
+        'name'=>$school->name.' Football',
         'level'=>'Varsity',
         'gender'=>'boys'
       ]);
