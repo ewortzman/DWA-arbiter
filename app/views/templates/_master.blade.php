@@ -11,6 +11,7 @@
 	
 	<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
 	<link rel="stylesheet" type="text/css" href="css/lavish-bootstrap.css">
+	<link rel="stylesheet" type="text/css" href="css/bootstrap-select.css">
 	<link rel="stylesheet" type="text/css" href="css/master.css">
 
 	@yield('styles')
@@ -61,6 +62,7 @@
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 <script src="js/bootstrap.js"></script>
+<script src="js/bootstrap-select.js"></script>
 <script src="js/typeahead.bundle.js"></script>
 
 @yield('script')
