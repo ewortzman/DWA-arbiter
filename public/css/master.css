@@ -10,4 +10,19 @@
 .nav label {
 	padding-top: 15px;
 	padding-right: 15px;
+	color: #C7C5b1;
+}
+
+.eventTable {
+	width: 100%;
+}
+
+.eventTable th {
+	width: 25%;
+	padding-top: 15px; 
+}
+
+.eventTable td {
+	width: 75%;
+	padding-top: 15px;
 }
