@@ -20,7 +20,10 @@ class CreateSchoolsTable extends Migration {
 
 			#Mandatory fields
 			$table->string('name');
-			$table->string('address');
+			$table->string('street');
+			$table->string('city');
+			$table->string('state');
+			$table->string('zip');
 			$table->integer('AD')->unsigned();
 
 			#Set foreign keys

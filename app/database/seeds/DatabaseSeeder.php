@@ -38,7 +38,10 @@ class UserTableSeeder extends Seeder{
       'first'=>'Ethan',
       'last'=>'Wortzman',
       'password'=>Hash::make('password'),
-      'address'=>"133 Ryan Road, Stoughton, MA 02072",
+      'street'=>'133 Ryan Road',
+      'city'=>'Stoughton',
+      'state'=>'MA',
+      'zip'=>'02072',
       'phone'=>"7812670827",
       'confirmation'=>Str::random(32),
       'confirmed'=>1
@@ -50,7 +53,10 @@ class UserTableSeeder extends Seeder{
         'first'=>$faker->firstName,
         'last'=>$faker->lastName,
         'password'=>Hash::make('password'),
-        'address'=>$faker->buildingNumber.' '.$faker->streetName.', '.$faker->city.', '.$faker->stateAbbr.' '.$faker->postcode,
+        'street'=>$faker->buildingNumber.' '.$faker->streetName,
+        'city'=>$faker->city,
+        'state'=>$faker->stateAbbr,
+        'zip'=>$faker->postcode,
         'phone'=>$faker->phoneNumber,
         'confirmation'=>Str::random(32),
         'confirmed'=>1
@@ -136,7 +142,10 @@ class CreateADs extends Seeder{
         'first'=>$faker->firstName,
         'last'=>$faker->lastName,
         'password'=>Hash::make('password'),
-        'address'=>$faker->buildingNumber.' '.$faker->streetName.', '.$faker->city.', '.$faker->stateAbbr.' '.$faker->postcode,
+        'street'=>$faker->buildingNumber.' '.$faker->streetName,
+        'city'=>$faker->city,
+        'state'=>$faker->stateAbbr,
+        'zip'=>$faker->postcode,
         'phone'=>$faker->phoneNumber,
         'confirmation'=>Str::random(32),
         'confirmed'=>1
@@ -166,7 +175,10 @@ class SchoolTableSeeder extends Seeder{
       $city = $faker->city;
       School::create([
         'name'=>$city." High School",
-        'address'=>$faker->buildingNumber.' '.$faker->streetName.', '.$city.', '.$faker->stateAbbr.' '.$faker->postcode,
+        'street'=>$faker->buildingNumber.' '.$faker->streetName,
+        'city'=>$faker->city,
+        'state'=>$faker->stateAbbr,
+        'zip'=>$faker->postcode,
         'AD'=>$AD->id
       ]);
     }
@@ -184,7 +196,10 @@ class CreateCoaches extends Seeder{
         'first'=>$faker->firstName,
         'last'=>$faker->lastName,
         'password'=>Hash::make('password'),
-        'address'=>$faker->buildingNumber.' '.$faker->streetName.', '.$faker->city.', '.$faker->stateAbbr.' '.$faker->postcode,
+        'street'=>$faker->buildingNumber.' '.$faker->streetName,
+        'city'=>$faker->city,
+        'state'=>$faker->stateAbbr,
+        'zip'=>$faker->postcode,
         'phone'=>$faker->phoneNumber,
         'confirmation'=>Str::random(32),
         'confirmed'=>1
@@ -232,7 +247,6 @@ class EventTableSeeder extends Seeder{
     for ($i=-20;$i<20;$i+=2){
       Models\Event::create([
         'association_id'=>Association::find(rand(1,3))->id,
-        'location'=>"",
         'start'=>$faker->dateTimeBetween($startDate = "$i days", $endDate = "$i days"),
         'end'=>$faker->dateTimeBetween($startDate = "$i days", $endDate = "$i days"),
         'type'=>'standard'
@@ -255,7 +269,10 @@ class EventTeamTableSeeder extends Seeder{
         } while(in_array($team, $teams));
 
         $event->teams()->attach($team, ['home'=>$i==1]);
-        $event->location = Team::find($team)->school->address;
+        $event->street = Team::find($team)->school->street;
+        $event->city = Team::find($team)->school->city;
+        $event->state = Team::find($team)->school->state;
+        $event->zip = Team::find($team)->school->zip;
 
         $event->save();
 

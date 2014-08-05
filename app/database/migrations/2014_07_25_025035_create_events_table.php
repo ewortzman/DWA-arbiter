@@ -20,7 +20,10 @@ class CreateEventsTable extends Migration {
 
 			#Mandatory fields
 			$table->integer('association_id')->unsigned();
-			$table->string('location');
+			$table->string('street');
+			$table->string('city');
+			$table->string('state');
+			$table->string('zip');
 			$table->string('type');
 			$table->dateTime('start');
 			$table->dateTime('end');

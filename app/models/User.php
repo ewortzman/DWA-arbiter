@@ -15,6 +15,7 @@ class User extends Eloquent implements UserInterface, RemindableInterface {
 	 * @var string
 	 */
 	protected $table = 'users';
+	protected $appends = array('address');
 
 	/**
 	 * The attributes excluded from the model's JSON form.
@@ -33,5 +34,26 @@ class User extends Eloquent implements UserInterface, RemindableInterface {
 
 	public function events(){
 		return $this->belongsToMany('Models\\Event', 'user_events');
+	}
+
+	public function getNameAttribute(){
+		return $this->first." ".$this->last;
+	}
+
+  public function getAddressAttribute(){
+      return $this->street.", ".$this->city.", ".$this->state." ".$this->zip;
+  }
+
+  public function setAddressAttribute($value){
+		$parsed['street'] = strtok($value, ",");
+		$parsed['city'] = trim(strtok(","));
+		$stateZip = explode(" ", strtok(","));
+		$parsed['state'] = trim($stateZip[0]);
+		$parsed['zip'] = trim($stateZip[1]);
+
+    $this->street = $parsed['street'];
+    $this->city = $parsed['city'];
+    $this->state = $parsed['state'];
+    $this->zip = $parsed['zip'];        
 	}
 }

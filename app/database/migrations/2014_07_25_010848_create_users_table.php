@@ -22,7 +22,10 @@ class CreateUsersTable extends Migration {
 			$table->string('email')->unique(); #used as username
 			$table->string('first');
 			$table->string('last');
-			$table->string('address');
+			$table->string('street');
+			$table->string('city');
+			$table->string('state');
+			$table->string('zip');
 			$table->string('password');
 			$table->rememberToken();
 
