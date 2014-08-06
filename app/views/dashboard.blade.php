@@ -33,7 +33,6 @@ $(function() {
 });
 
 $("#tabs a").click(function(){
-	console.log(this)
 	$(this).parent().addClass("active")
 	$(this).parent().siblings().removeClass("active")
 })

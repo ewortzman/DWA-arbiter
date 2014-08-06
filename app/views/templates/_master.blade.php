@@ -8,11 +8,11 @@
 	@show
 	</title>
 
-	
 	<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
 	<link rel="stylesheet" type="text/css" href="css/lavish-bootstrap.css">
 	<link rel="stylesheet" type="text/css" href="css/bootstrap-select.css">
 	<link rel="stylesheet" type="text/css" href="css/master.css">
+	<link rel="stylesheet" type="text/css" href="css/selectize.bootstrap3.css">
 
 	@yield('styles')
 </head>
@@ -63,7 +63,8 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 <script src="js/bootstrap.js"></script>
 <script src="js/bootstrap-select.js"></script>
-<script src="js/typeahead.bundle.js"></script>
+<script src="//code.jquery.com/ui/1.11.0/jquery-ui.js"></script>
+<script src="js/selectize.js"></script>
 
 @yield('script')
 </body>

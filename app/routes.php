@@ -77,7 +77,10 @@ Route::post('/register', array('before'=>'reverse-auth', function(){
 	$user->password=Hash::make($data['password']);
 	$user->first=ucfirst($data['first']);
 	$user->last=ucfirst($data['last']);
-	$user->address=$data['street'].", ".$data['city'].", ".$data['state']." ".$data['zip'];
+	$user->street=$data['street'];
+	$user->city=$data['city'];
+	$user->state=$data['state'];
+	$user->zip=$data['zip'];
 	$user->phone=$data['phone'];
 	$user->confirmation=Str::random(32);
 	$user->confirmed=0;
@@ -143,6 +146,7 @@ Route::get('/dashboard', array('before'=>'auth', function(){
 		->with('assoc_lookup', $assoc_lookup);
 }));
 
+
 /**
  **********************************
  * ROUTE: commissioner
@@ -178,23 +182,34 @@ Route::post('/association/{id}', function($id){
 	return "association $id POST placeholder";
 });
 
+/**
+ **********************************
+ * ROUTE: Association member list (JSON)
+ **********************************
+ */
 Route::get('/association/{id}/members', function($id){
-	return "association $id member list placeholder";
+	$members = Association::find($id)->members;
+	return Response::json($members);
 });
 
-Route::get('/association/{id}/schedule', function($id){
-	return "association $id master schedule placeholder";
-});
-
+/**
+ **********************************
+ * ROUTE: Schedule
+ **********************************
+ */
 Route::get('/schedule', function(){
-	$events = Auth::user()->events;
-
-	$assocs = Auth::user()->roles->unique('association_id');
+	$role = Input::get("role");
+	if($role == "official"){
+		$events = Auth::user()->events;
+	} else if($role == "commissioner"){
+		$assoc = Association::find(Input::get("assoc"));
+		$events = $assoc->events;
+	}
 
 	return View::make("schedule")
 		->with("user", Auth::user())
 		->with("events", $events)
-		->with("assocs", $assocs);
+		->with("role", Input::get('role'));
 });
 
 Route::get('/profile', function(){
@@ -205,16 +220,45 @@ Route::post('/profile', function(){
 	return "profile POST placeholder";
 });
 
-Route::get('/user/{id}', function($id){
-	return "user $id placeholder";
-});
-
+/**
+ **********************************
+ * ROUTE: View Event
+ **********************************
+ */
 Route::get('/event/{id}', function($id){
-	return "event $id placeholder";
+	return View::make('event')
+		->with('event', Models\Event::find($id))
+		->with('role', Input::get('role'));
 });
 
+/**
+ **********************************
+ * ROUTE: Edit Event
+ **********************************
+ */
 Route::post('/event/{id}', function($id){
-	return "event $id POST placeholder";
+	$intent = Input::get('intent');
+
+	if ($intent == "addOfficial"){
+		$newOfficial = User::find(Input::get('id'));
+		if ($newOfficial){
+			$event = Models\Event::find($id);
+			if($event->officials()->has($newOfficial)){
+				return "Already exists";
+			}
+			$event->officials()->attach($newOfficial);
+
+			Mail::send('emails.assignment', array('event' => $event), function($message) use ($newOfficial){
+		    $message->to($newOfficial->email, $newOfficial->first." ".$newOfficial->last);
+		    $message->from('noreply@localhost', 'Do Not Reply');
+		    $message->subject('New Assignment');
+		  });
+
+			return $newOfficial;
+		}
+	}
+
+	return $event->officials;
 });
 
 Route::get('/event/add', function(){
