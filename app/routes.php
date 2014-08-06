@@ -136,6 +136,8 @@ Route::get('/dashboard', array('before'=>'auth', function(){
 	$user = Auth::user();
 	$user_roles = $user->roles;
 
+	$roles = [];
+
 	foreach ($user_roles as $role){
 		$roles[$role->pivot->role][] = $role->pivot->association_id;
 		$assoc_lookup[$role->pivot->association_id] = Association::find($role->pivot->association_id)->name;
