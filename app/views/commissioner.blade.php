@@ -3,6 +3,7 @@
 @section('sidebar-commissioner')
 <ul class="nav">
 	<li id="sidebar-home"><a href="#">Home</a></li>
+	<li id="sidebar-new"><a href="#">New Event</a></li>
 	<li><a href="#" class="parent" data-toggle="collapse">Assignments <i class="glyphicon glyphicon-chevron-right"></i></a>
 		<ul class="nav" style="display:none;">
 			@foreach($assocs as $assoc)
