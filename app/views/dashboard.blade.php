@@ -24,7 +24,7 @@ Dashboard
 	@foreach($roles as $role=>$assocs)
 	<?php $first=true ?>
 	<div id="{{$role}}">
-		@include(strtolower($role), ['role'=>strtolower($role), 'assocs'=>$assocs, 'assoc_lookup'=>$assoc_lookup])		
+		@include(strtolower(str_replace(' ', '_', $role)), ['role'=>strtolower($role), 'assocs'=>$assocs, 'assoc_lookup'=>$assoc_lookup])		
 	</div>
 	@endforeach
 </div>

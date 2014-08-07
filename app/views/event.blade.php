@@ -110,9 +110,10 @@
 		$('#officialList > tbody:last').append("<tr><td>"+$('#addFormDisplay').html()+"</td></tr>");
 
 		$('#addForm').submit(function(e){
+			console.log('pressed');
 			$.post('/event/{{$event->id}}', {intent:"addOfficial", id:$('#newOfficialName').val(), assoc:"{{$event->association->id}}"}, function(data){
 				console.log(data);
-				$('#officialList td:last').html(data.name);				
+				console.log($('#officialList td:last').html(data.name));				
 			});
 			e.preventDefault();
 		});

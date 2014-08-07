@@ -246,22 +246,17 @@ Route::post('/event/{id}', function($id){
 		$newOfficial = User::find(Input::get('id'));
 		if ($newOfficial){
 			$event = Models\Event::find($id);
-			if($event->officials()->has($newOfficial)){
-				return "Already exists";
-			}
-			$event->officials()->attach($newOfficial);
+			$event->officials()->attach($newOfficial->id);
 
 			Mail::send('emails.assignment', array('event' => $event), function($message) use ($newOfficial){
 		    $message->to($newOfficial->email, $newOfficial->first." ".$newOfficial->last);
 		    $message->from('noreply@localhost', 'Do Not Reply');
 		    $message->subject('New Assignment');
 		  });
-
-			return $newOfficial;
 		}
 	}
 
-	return $event->officials;
+	return $newOfficial;
 });
 
 Route::get('/event/add', function(){
@@ -362,7 +357,7 @@ Route::post('/new-school', function(){
 	$school->zip = $data['zip'];
 	$school->AD = $user->id;
 
-	$user->roles()->attach(9999, ['role','Athletic Director']);
+	$user->roles()->attach(9999, ['role'=>'Athletic Director']);
 
 	$school->save();
 
