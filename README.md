@@ -1,6 +1,6 @@
 #THIS APP DOES NOT WORK!!!
 
-a live link is located here: arbiter-ewortzman.herokuapp.com
+a live link is located here: http://arbiter-ewortzman.herokuapp.com
 
 ##Things that work:
 
