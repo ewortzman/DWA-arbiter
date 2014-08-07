@@ -27,7 +27,7 @@ class CreateEventsTable extends Migration {
 			$table->string('type');
 			$table->dateTime('start');
 			$table->dateTime('end');
-			$table->float('fee');
+			$table->float('fee')->nullable();
 
 			#Set foreign keys
 			$table->foreign('association_id')->references('id')->on('associations');
