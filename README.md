@@ -9,6 +9,7 @@ a live link is located here: arbiter-ewortzman.herokuapp.com
 *viewing schedule
 *commissioners assigning officials to events
 	*officials are alerted by email when they are assigned to a new event
+	*there is a graphical bug when assigning 2 officials to an event without reloading the page
 *viewing event details
 *joining an existing association
 *creating a new association

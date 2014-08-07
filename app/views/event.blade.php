@@ -113,7 +113,10 @@
 			console.log('pressed');
 			$.post('/event/{{$event->id}}', {intent:"addOfficial", id:$('#newOfficialName').val(), assoc:"{{$event->association->id}}"}, function(data){
 				console.log(data);
-				console.log($('#officialList td:last').html(data.name));				
+				$('#officialList td:last').html(data.name);
+				console.log($('#officialList td:last').html());
+				console.log($('#officialList > tbody:last').html());
+				console.log($('#addFormDisplay').html());
 			});
 			e.preventDefault();
 		});
