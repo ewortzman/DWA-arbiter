@@ -19,7 +19,6 @@ class DatabaseSeeder extends Seeder {
     $this->call('CreateADs');
     $this->call('SchoolTableSeeder');
 
-    $this->call('CreateCoaches');
     $this->call('TeamTableSeeder');
     $this->call('EventTableSeeder');
     $this->call('EventTeamTableSeeder');
@@ -157,11 +156,7 @@ class CreateADs extends Seeder{
         'role' => 'Athletic Director'
       ];
 
-      UserRole::create([
-        'user_id'=>$user->id,
-        'association_id'=>null,
-        'role'=>'Athletic Director'
-      ]);
+      UserRole::create($data);
     }
   }
 }
@@ -185,35 +180,6 @@ class SchoolTableSeeder extends Seeder{
   }
 }
 
-class CreateCoaches extends Seeder{
-  public function run(){
-    $faker = Faker::create();
-
-    for ($i=200;$i<250;$i++){
-      $user=User::create([
-        'id'=>$i,
-        'email'=>"ethan.wortzman+$i@gmail.com",
-        'first'=>$faker->firstName,
-        'last'=>$faker->lastName,
-        'password'=>Hash::make('password'),
-        'street'=>$faker->buildingNumber.' '.$faker->streetName,
-        'city'=>$faker->city,
-        'state'=>$faker->stateAbbr,
-        'zip'=>$faker->postcode,
-        'phone'=>$faker->phoneNumber,
-        'confirmation'=>Str::random(32),
-        'confirmed'=>1
-      ]);
-
-      UserRole::create([
-        'user_id'=>$user->id,
-        'association_id'=>null,
-        'role'=>'Coach'
-      ]);
-    }
-  }
-}
-
 class TeamTableSeeder extends Seeder{
   public function run() {
     $faker = Faker::create();
@@ -222,7 +188,6 @@ class TeamTableSeeder extends Seeder{
       Team::create([
         'sport_id'=>1,
         'school_id'=>$school->id,
-        'coach'=>2*$school->id-1+200,
         'name'=>$school->name.' Wrestling',
         'level'=>'Varsity',
         'gender'=>'coed'
@@ -231,7 +196,6 @@ class TeamTableSeeder extends Seeder{
       Team::create([
         'sport_id'=>2,
         'school_id'=>$school->id,
-        'coach'=>2*$school->id+200,
         'name'=>$school->name.' Football',
         'level'=>'Varsity',
         'gender'=>'boys'

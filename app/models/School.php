@@ -2,6 +2,7 @@
 
 class School extends \Eloquent {
 	protected $table = "schools";
+	protected $guarded = [];
 	protected $appends = array('address');
 
 	public function AD(){ ## fk(users.id)

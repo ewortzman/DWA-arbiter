@@ -2,6 +2,7 @@
 
 class Association extends \Eloquent {
 	protected $table = "associations";
+	protected $guarded = [];
 
 	public function sport(){ ## fk(sports.id)
 		return $this->belongsTo('Sport');

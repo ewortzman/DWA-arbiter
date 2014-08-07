@@ -2,6 +2,7 @@
 
 class UserRole extends \Eloquent {
 	protected $table = "user_roles";
+	protected $guarded = [];
 
 	public $timestamps = false;
 

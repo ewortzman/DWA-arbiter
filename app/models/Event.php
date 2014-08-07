@@ -4,6 +4,7 @@ namespace Models;
 
 class Event extends \Eloquent {
 	protected $table = "events";
+	protected $guarded = [];
 	protected $appends = array('location');
 
 	public function association(){ ## fk(sports.id)

@@ -2,6 +2,7 @@
 
 class Team extends \Eloquent {
 	protected $table = "teams";
+	protected $guarded = [];
 
 
 	public function coach(){ ## fk(User.id)

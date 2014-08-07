@@ -2,6 +2,7 @@
 
 class Sport extends \Eloquent {
 	protected $table = "sports";
+	protected $guarded = [];
 
 	public function teams(){ ## Owner: teams.sport_id
 		return $this->hasMany('Team');

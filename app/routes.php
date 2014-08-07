@@ -296,17 +296,25 @@ Route::post('/blocks', function(){
 	return "blocks POST placeholder";
 });
 
-/**
- **********************************
- * ROUTE: Admin
- **********************************
- */
-Route::get('/admin', function(){
-	return View::make('admin');
-});
+Route::get('/new-association', array('before'=>'auth', function(){
+	$sports = Sport::all();
 
-Route::get('/admin/new-sport', function(){
-	return View::make('add-sport');
+	return View::make('new-association')
+		->with('sports', $sports);
+}));
+
+Route::post('/new-association', function(){
+	$data = Input::all();
+	$user = Auth::user();
+
+	$assoc = new Association();
+	$assoc->name=$data['name'];
+	$assoc->sport_id=$data['sport'];
+	$assoc->save();
+
+	$user->roles()->attach($assoc->id, ['role'=>'Commissioner']);
+
+	return Redirect::to('/');
 });
 
 Route::get('/join-association', array('before'=>'auth', function(){
@@ -324,10 +332,68 @@ Route::post('/join-association', function(){
 	return Redirect::to('/');
 });
 
-Route::get('/association-request', array('before'=>'auth', function(){
-	return View::make('association-request');
+Route::get('/new-sport', array('before'=>'auth', function(){
+	return View::make('new-sport');
 }));
 
-Route::post('/association-request', function(){
+Route::post('/new-sport', function(){
+	$data = Input::all();
+
+	$sport = new Sport();
+	$sport->name = $data['name'];
+	$sport->save();
+
+	return Redirect::to('/');
+});
+
+Route::get('/new-school', array('before'=>'auth', function(){
+	return View::make('new-school');
+}));
+
+Route::post('/new-school', function(){
+	$data = Input::all();
+	$user = Auth::user();
+
+	$school = new School();
+	$school->name = $data['name'];
+	$school->street = $data['street'];
+	$school->city = $data['city'];
+	$school->state = $data['state'];
+	$school->zip = $data['zip'];
+	$school->AD = $user->id;
+
+	$data = [
+		'user_id' => $user->id,
+		'association_id' => null,
+		'role' => 'Athletic Director'
+	];
+
+	UserRole::create($data);
+
+	$school->save();
+
+	return Redirect::to('/');
+});
+
+Route::get('/new-team', array('before'=>'auth', function(){
+	$schools = School::all();
+	$sports = Sport::all();
+
+	return View::make('new-team')
+		->with('schools', $schools)
+		->with('sports', $sports);
+}));
+
+Route::post('/new-team', function(){
+	$data = Input::all();
+
+	Team::create([
+		'school_id' => $data['school'],
+		'sport_id' => $data['sport'],
+		'name' => $data['name'],
+		'level' => $data['level'],
+		'gender' => $data['gender']
+	]);
+
 	return Redirect::to('/');
 });

@@ -7,7 +7,10 @@ Dashboard
 @section('content')
 
 <a href="/join-association"><button class="btn btn-default btn-large">Join Association</button></a>
-<a href="/association-request"><button class="btn btn-default btn-large">Submit Association Request</button></a>
+<a href="/new-association"><button class="btn btn-default btn-large">New Association</button></a>
+<a href="/new-sport"><button class="btn btn-default btn-large">New Sport</button></a>
+<a href="/new-school"><button class="btn btn-default btn-large">New School</button></a>
+<a href="/new-team"><button class="btn btn-default btn-large">New Team</button></a>
 
 <div style="padding-top:25px"></div>
 <div id="tabs">
