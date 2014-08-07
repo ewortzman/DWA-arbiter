@@ -163,13 +163,7 @@ class CreateADs extends Seeder{
         'confirmed'=>1
       ]);
 
-      $data = [
-        'user_id' => $user->id,
-        'association_id' => 9999,
-        'role' => 'Athletic Director'
-      ];
-
-      UserRole::create($data);
+      $user->roles()->attach(9999, ['role'=>'Athletic Director']);
     }
   }
 }

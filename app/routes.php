@@ -362,13 +362,7 @@ Route::post('/new-school', function(){
 	$school->zip = $data['zip'];
 	$school->AD = $user->id;
 
-	$data = [
-		'user_id' => $user->id,
-		'association_id' => null,
-		'role' => 'Athletic Director'
-	];
-
-	UserRole::create($data);
+	$user->roles()->attach(9999, ['role','Athletic Director']);
 
 	$school->save();
 

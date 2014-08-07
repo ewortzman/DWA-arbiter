@@ -13,8 +13,6 @@ class CreateEventTeamsTable extends Migration {
 	public function up()
 	{
 		Schema::create('event_teams', function($table){
-			$table->increments('id');
-
 			#Mandatory fields
 			$table->integer('event_id')->unsigned();
 			$table->integer('team_id')->unsigned();
