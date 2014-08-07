@@ -1,13 +1,10 @@
 @extends('templates.with-sidebar')
 
 @section('sidebar-commissioner')
-<?php var_dump($assocs) ?>
-<br>
-<?php var_dump($assoc_lookup) ?>
 <ul class="nav">
 	<li id="sidebar-home"><a href="#">Home</a></li>
 	<li id="sidebar-new"><a href="#">New Event</a></li>
-	<li><a href="#" class="parent" data-toggle="collapse">Assignments <i class="glyphicon glyphicon-chevron-right"></i></a>
+	<li><a href="#" class="parent-{{$role}}" data-toggle="collapse">Assignments <i class="glyphicon glyphicon-chevron-right"></i></a>
 		<ul class="nav" style="display:none;">
 			@foreach($assocs as $assoc)
 			<li style="padding-left:15px;" class="sidebar-assoc" target="{{$assoc}}">
@@ -26,8 +23,9 @@
 @section('script')
 @parent
 <script type="text/javascript">
-$('.parent').click(function(){
+$('.parent-{{$role}}').click(function(){
 	// toggle icon
+	console.log("click");
 	$(this).find("i").toggleClass("glyphicon-chevron-right glyphicon-chevron-down");
 	$(this).parent().find("ul").toggle();
 });

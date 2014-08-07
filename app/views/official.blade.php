@@ -5,7 +5,7 @@
 	<li id="sidebar-home"><a href="#">Home</a></li>
 	<li id="sidebar-sched"><a href="#">Schedule</a></li>
 	<li id="sidebar-block"><a href="#">Blocks</a></li>
-	<li><a href="#" class="parent">Associations <i class="glyphicon glyphicon-chevron-right"></i></a>
+	<li><a href="#" class="parent-{{$role}}">Associations <i class="glyphicon glyphicon-chevron-right"></i></a>
 		<ul class="nav" style="display:none;">
 			@foreach($assocs as $assoc)
 			<li style="padding-left:15px;" class="sidebar-assoc" target="{{ $assoc }}">
@@ -26,16 +26,9 @@
 @section('script')
 @parent
 <script type="text/javascript">
-$('.parent').click(function() {
-  var subMenu = $(this).siblings('ul');
-  if ($(subMenu).hasClass('open')) {
-    $(subMenu).fadeOut();
-    $(subMenu).removeClass('open').addClass('closed');
-  }
-  else {
-    $(subMenu).fadeIn();
-    $(subMenu).removeClass('closed').addClass('open');
-  }
+$('.parent-{{$role}}').click(function() {
+  $(this).find("i").toggleClass("glyphicon-chevron-right glyphicon-chevron-down");
+	$(this).parent().find("ul").toggle();
 });
 
 $('#sidebar-home').click(function(){
