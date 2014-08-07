@@ -14,10 +14,6 @@ a live link is located here: http://arbiter-ewortzman.herokuapp.com
 *joining an existing association
 *creating a new association
 
-##Things that do not work
-
-*creating a new school <-this one issue breaks the whole app
-
 ##Things that are not implemented
 
 *officials accepting/declining assignments
@@ -28,4 +24,4 @@ I have included a seeded database, so that the functions that do work can be use
 
 There is **absolutely no validation of any kind**.  If some input is invalid, it's just going to crash.
 
-My original intent for this app can be viewed at README.md.bak.
+My original intent for this app can be viewed a README.md.bak.
