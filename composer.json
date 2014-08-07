@@ -7,7 +7,7 @@
 		"laravel/framework": "4.2.*",
 		"guzzlehttp/guzzle": "dev-master",
 		"mailgun/mailgun-php": "dev-master",
-		"fzaninotto/faker": "1.5.*@dev",
+		"fzaninotto/faker": "dev-master",
                 "paste/pre": "dev-master"
 
 	},
