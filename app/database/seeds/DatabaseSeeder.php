@@ -74,6 +74,11 @@ class SportTableSeeder extends Seeder{
     Sport::create([
       'name'=>'Football'
     ]);
+
+    Sport::create([
+      'id'=>9999,
+      'name'=>'AD Sport'
+    ]);
   }
 }
 
@@ -95,6 +100,12 @@ class AssociationTableSeeder extends Seeder{
     Association::create([
       'name'=>'NVFOA',
       'sport_id'=>2
+    ]);
+
+    Association::create([
+      'id'=>9999,
+      'name'=>'AD Assoc',
+      'sport_id'=>9999
     ]);
   }
 }
@@ -125,7 +136,9 @@ class UserRoleTableSeeder extends Seeder{
     }
 
     foreach (Association::all() as $assoc){
-      $assoc->members->first()->roles()->attach($assoc->id, ['role'=>'Commissioner']);
+      if($assoc->members->count() > 0){
+       $assoc->members->first()->roles()->attach($assoc->id, ['role'=>'Commissioner']);
+      }
     }
   }
 }
@@ -152,7 +165,7 @@ class CreateADs extends Seeder{
 
       $data = [
         'user_id' => $user->id,
-        'association_id' => null,
+        'association_id' => 9999,
         'role' => 'Athletic Director'
       ];
 

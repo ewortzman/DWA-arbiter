@@ -4,7 +4,7 @@
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "f2c0d6ae5e6e8338f0995f14d46e210b",
+    "hash": "187a5a35dece1343ec692d8a28d0afdf",
     "packages": [
         {
             "name": "classpreloader/classpreloader",
@@ -146,6 +146,56 @@
             "time": "2014-07-11 05:56:54"
         },
         {
+            "name": "fzaninotto/faker",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/fzaninotto/Faker.git",
+                "reference": "c48f30549b1ec508a74141a833757ca1e0d9ca53"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/fzaninotto/Faker/zipball/c48f30549b1ec508a74141a833757ca1e0d9ca53",
+                "reference": "c48f30549b1ec508a74141a833757ca1e0d9ca53",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.3"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "~4.0",
+                "squizlabs/php_codesniffer": "~1.5"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.5.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-0": {
+                    "Faker": "src/",
+                    "Faker\\PHPUnit": "test/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "François Zaninotto"
+                }
+            ],
+            "description": "Faker is a PHP library that generates fake data for you.",
+            "keywords": [
+                "data",
+                "faker",
+                "fixtures"
+            ],
+            "time": "2014-07-17 07:25:43"
+        },
+        {
             "name": "guzzle/guzzle",
             "version": "v3.9.1",
             "source": {
@@ -243,12 +293,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/guzzle/guzzle.git",
-                "reference": "799cdf36460d697a8e9614298f3e03a71336346c"
+                "reference": "a09915c8319be9420621b9822021c9a8a21a82d5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/guzzle/guzzle/zipball/799cdf36460d697a8e9614298f3e03a71336346c",
-                "reference": "799cdf36460d697a8e9614298f3e03a71336346c",
+                "url": "https://api.github.com/repos/guzzle/guzzle/zipball/a09915c8319be9420621b9822021c9a8a21a82d5",
+                "reference": "a09915c8319be9420621b9822021c9a8a21a82d5",
                 "shasum": ""
             },
             "require": {
@@ -300,7 +350,7 @@
                 "rest",
                 "web service"
             ],
-            "time": "2014-08-05 20:06:20"
+            "time": "2014-08-06 20:48:45"
         },
         {
             "name": "guzzlehttp/streams",
@@ -755,6 +805,54 @@
                 "php"
             ],
             "time": "2014-07-23 18:24:17"
+        },
+        {
+            "name": "paste/pre",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/paste/Pre.php.git",
+                "reference": "bf47c87c8fd8f1f75d6b2a3235ee072bb45a5842"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/paste/Pre.php/zipball/bf47c87c8fd8f1f75d6b2a3235ee072bb45a5842",
+                "reference": "bf47c87c8fd8f1f75d6b2a3235ee072bb45a5842",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "Paste": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Aaron Oxborrow",
+                    "email": "aaron@pastelabs.com",
+                    "homepage": "http://pastelabs.com/",
+                    "role": "Developer"
+                }
+            ],
+            "description": "A handsome replacement for print_r & var_dump. Debugging output with understated style.",
+            "homepage": "https://github.com/paste/Pre.php",
+            "keywords": [
+                "debug",
+                "dump",
+                "pre",
+                "pretty",
+                "print",
+                "print_r",
+                "var_dump"
+            ],
+            "time": "2013-06-12 03:56:57"
         },
         {
             "name": "patchwork/utf8",
@@ -1877,104 +1975,7 @@
         }
     ],
     "packages-dev": [
-        {
-            "name": "fzaninotto/faker",
-            "version": "dev-master",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/fzaninotto/Faker.git",
-                "reference": "c48f30549b1ec508a74141a833757ca1e0d9ca53"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/fzaninotto/Faker/zipball/c48f30549b1ec508a74141a833757ca1e0d9ca53",
-                "reference": "c48f30549b1ec508a74141a833757ca1e0d9ca53",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">=5.3.3"
-            },
-            "require-dev": {
-                "phpunit/phpunit": "~4.0",
-                "squizlabs/php_codesniffer": "~1.5"
-            },
-            "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "1.5.x-dev"
-                }
-            },
-            "autoload": {
-                "psr-0": {
-                    "Faker": "src/",
-                    "Faker\\PHPUnit": "test/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "François Zaninotto"
-                }
-            ],
-            "description": "Faker is a PHP library that generates fake data for you.",
-            "keywords": [
-                "data",
-                "faker",
-                "fixtures"
-            ],
-            "time": "2014-07-17 07:25:43"
-        },
-        {
-            "name": "paste/pre",
-            "version": "dev-master",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/paste/Pre.php.git",
-                "reference": "bf47c87c8fd8f1f75d6b2a3235ee072bb45a5842"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/paste/Pre.php/zipball/bf47c87c8fd8f1f75d6b2a3235ee072bb45a5842",
-                "reference": "bf47c87c8fd8f1f75d6b2a3235ee072bb45a5842",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">=5.3.0"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-0": {
-                    "Paste": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Aaron Oxborrow",
-                    "email": "aaron@pastelabs.com",
-                    "homepage": "http://pastelabs.com/",
-                    "role": "Developer"
-                }
-            ],
-            "description": "A handsome replacement for print_r & var_dump. Debugging output with understated style.",
-            "homepage": "https://github.com/paste/Pre.php",
-            "keywords": [
-                "debug",
-                "dump",
-                "pre",
-                "pretty",
-                "print",
-                "print_r",
-                "var_dump"
-            ],
-            "time": "2013-06-12 03:56:57"
-        }
+
     ],
     "aliases": [
 

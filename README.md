@@ -1,42 +1,26 @@
-#Arbiter knockoff
+#THIS APP DOES NOT WORK!!!
 
-Facilitate the creationg of sports leagues, manage schedules, and allow assigning of officials.  system should allow athletic directors to set their schedules, commissioners to assign officials, and officials to accept/reject the assignments
+a live link is located here: arbiter-ewortzman.herokuapp.com
 
-###Essential Features
-* AD/Coach
-	* create teams
-		* designate sport, gender (boys, girls, coed), level (fresh, JV, varsity), team name
-		* all teams are bound to a specific school
-	* set schedules
-		* must designate opponent(s) from the list of existing teams
-* Commissioner
-	* view team schedules
-	* assign officials to events
-	* designate fees for events
-* Official
-	* view current assignments
-	* accept/decline assignments
-	* request turn-backs
+##Things that work:
 
-###Advanced Features
-* Calendar implementation
-	* export Officials and team schedules to CSV files
-	* include Google calendar
-* Email support
-	* notify officials upon new assignment/assignment change
-	* notify AD when his team is involved in an event created by another AD
-	* provide Commissioner with Daily Digest emails
-* Post-game information
-	* track scores, stats, and other game data after the game
-* History
-	* allow officials to review their histories with other officials.  Allow coaches/ADs to review history against other teams
-	* view stats on previous seasons.  allow comparing previous seasons to current season
-* Better interface
-	* allow a calendar style interface for scheduling/assigning.  click-and-drag to reschedule events, etc
-	* auto-fill textbox for selecting opponents/officials/site/etc.
-* Evaluations
-	* allow coaches and officials to evaluate officials
-	* prehaps allow spectators to evaluate officials as well
-* Event Reports
-	* officials and coaches can create event reports following every event
-	* may be a black text field or a form of some kind
+* Registration
+	* Registration sends an email, but it turns out that users don;t need to be verified to log in
+*viewing schedule
+*commissioners assigning officials to events
+	*officials are alerted by email when they are assigned to a new event
+*viewing event details
+*joining an existing association
+*creating a new association
+
+##Things that do not work
+*creating a new school <-this one issue breaks the whole app
+
+##Things that are not implemented
+*officials accepting/declining assignments
+*creating a new event
+*all intended AD functionality
+
+I have included a seeded database, so that the functions that do work can be used.
+
+My original intent for this app can be views a README.md.bak.
