@@ -13,6 +13,8 @@ class CreateUserRolesTable extends Migration {
 	public function up()
 	{
 		Schema::create('user_roles', function($table){
+			$table->increments('id');
+
 			#Mandatory fields
 			$table->integer('user_id')->unsigned();
 			$table->integer('association_id')->unsigned()->nullable();

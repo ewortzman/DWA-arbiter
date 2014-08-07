@@ -13,6 +13,8 @@ class CreateEventNotesTable extends Migration {
 	public function up()
 	{
 		Schema::create('event_notes', function($table){
+			$table->increments('id');
+
 			#Mandatoy fields
 			$table->integer('event_id')->unsigned();
 			$table->integer('user_id')->unsigned();

@@ -13,6 +13,8 @@ class CreateBlocksTable extends Migration {
 	public function up()
 	{
 		Schema::create('blocks', function($table){
+			$table->increments('id');
+
 			#Mandatory fields
 			$table->integer('user_id')->unsigned();
 			$table->dateTime('start');
