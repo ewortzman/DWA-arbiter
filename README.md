@@ -5,11 +5,11 @@ a live link is located here: arbiter-ewortzman.herokuapp.com
 ##Things that work:
 
 * Registration
-	* Registration sends an email, but it turns out that users don;t need to be verified to log in
+	* Registration sends an email, but it turns out that users don't need to be verified to log in. never investigated that, but it's probably a simple filter.
 *viewing schedule
 *commissioners assigning officials to events
 	*officials are alerted by email when they are assigned to a new event
-	*there is a graphical bug when assigning 2 officials to an event without reloading the page
+	*there is a graphical bug when assigning 2 officials to an event without reloading the page, but functionally it works fine.  just ignore the extra text boxes.
 *viewing event details
 *joining an existing association
 *creating a new association
@@ -24,4 +24,6 @@ a live link is located here: arbiter-ewortzman.herokuapp.com
 
 I have included a seeded database, so that the functions that do work can be used.
 
-My original intent for this app can be views a README.md.bak.
+There is **absolutely no validation of any kind**.  If some input is invalid, it's just going to crash.
+
+My original intent for this app can be viewed a README.md.bak.
