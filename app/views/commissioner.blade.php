@@ -1,6 +1,9 @@
 @extends('templates.with-sidebar')
 
 @section('sidebar-commissioner')
+<?php var_dump($assocs) ?>
+<br>
+<?php var_dump($assoc_lookup) ?>
 <ul class="nav">
 	<li id="sidebar-home"><a href="#">Home</a></li>
 	<li id="sidebar-new"><a href="#">New Event</a></li>
@@ -26,6 +29,7 @@
 $('.parent').click(function(){
 	// toggle icon
 	$(this).find("i").toggleClass("glyphicon-chevron-right glyphicon-chevron-down");
+	$(this).parent().find("ul").toggle();
 });
 
 $('#sidebar-home').click(function(){
