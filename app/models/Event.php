@@ -46,7 +46,7 @@ class Event extends \Eloquent {
 	  	$this->street = "";
 	    $this->city = "";
 	    $this->state = "";
-	    $this->zip = ""
+	    $this->zip = "";
 
 	    return;
   	}
