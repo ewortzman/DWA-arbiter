@@ -1,6 +1,6 @@
 #THIS APP DOES NOT WORK!!!
 
-a live link is located here: arbiter-ewortzman.herokuapp.com
+a live link is located here: http://arbiter-ewortzman.herokuapp.com
 
 ##Things that work:
 
@@ -15,9 +15,11 @@ a live link is located here: arbiter-ewortzman.herokuapp.com
 *creating a new association
 
 ##Things that do not work
+
 *creating a new school <-this one issue breaks the whole app
 
 ##Things that are not implemented
+
 *officials accepting/declining assignments
 *creating a new event
 *all intended AD functionality
@@ -26,4 +28,4 @@ I have included a seeded database, so that the functions that do work can be use
 
 There is **absolutely no validation of any kind**.  If some input is invalid, it's just going to crash.
 
-My original intent for this app can be viewed a README.md.bak.
+My original intent for this app can be viewed at README.md.bak.
