@@ -6,6 +6,10 @@ Dashboard
 
 @section('content')
 
+<a href="/join-association"><button class="btn btn-default btn-large">Join Association</button></a>
+<a href="/association-request"><button class="btn btn-default btn-large">Submit Association Request</button></a>
+
+<div style="padding-top:25px"></div>
 <div id="tabs">
 	<ul class="nav nav-tabs" role="tablist">
 	<?php $first=true ?>

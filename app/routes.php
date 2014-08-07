@@ -295,3 +295,39 @@ Route::get('/blocks', function(){
 Route::post('/blocks', function(){
 	return "blocks POST placeholder";
 });
+
+/**
+ **********************************
+ * ROUTE: Admin
+ **********************************
+ */
+Route::get('/admin', function(){
+	return View::make('admin');
+});
+
+Route::get('/admin/new-sport', function(){
+	return View::make('add-sport');
+});
+
+Route::get('/join-association', array('before'=>'auth', function(){
+	$associations = Association::all();
+
+	return View::make('join-association')
+		->with('associations', $associations);
+}));
+
+Route::post('/join-association', function(){
+	$data = Input::all();
+	$user = Auth::user();
+
+	$user->roles()->attach($data['association'], ['role'=>'Official']);
+	return Redirect::to('/');
+});
+
+Route::get('/association-request', array('before'=>'auth', function(){
+	return View::make('association-request');
+}));
+
+Route::post('/association-request', function(){
+	return Redirect::to('/');
+});
