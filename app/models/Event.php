@@ -42,6 +42,15 @@ class Event extends \Eloquent {
   }
 
   public function setLocationAttribute($value){
+  	if ($value == ""){
+	  	$this->street = "";
+	    $this->city = "";
+	    $this->state = "";
+	    $this->zip = ""
+
+	    return;
+  	}
+
 		$parsed['street'] = strtok($value, ",");
 		$parsed['city'] = trim(strtok(","));
 		$stateZip = explode(" ", strtok(","));

@@ -220,7 +220,8 @@ class EventTableSeeder extends Seeder{
         'association_id'=>Association::find(rand(1,3))->id,
         'start'=>$faker->dateTimeBetween($startDate = "$i days", $endDate = "$i days"),
         'end'=>$faker->dateTimeBetween($startDate = "$i days", $endDate = "$i days"),
-        'type'=>'standard'
+        'type'=>'standard',
+        'location'=>''
       ]);
     }
   }
