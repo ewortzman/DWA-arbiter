@@ -11,7 +11,7 @@
                 "paste/pre": "dev-master"
 
 	},
-	"require-dev: {
+	"require-dev": {
 	},
 	"autoload": {
 		"classmap": [
